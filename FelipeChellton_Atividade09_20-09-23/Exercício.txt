@@ -1,0 +1,14 @@
+Supondo o seguinte código, informe o que será impresso em cada console?
+
+<script>
+var j;
+var i=0
+vay y=i/0;
+var z=2/i;
+var w=null;
+console.log(j);-> Undefined
+console.log(y);-> num
+console.log(z);-> infinit
+console.log(w);-> null
+</script>
+
