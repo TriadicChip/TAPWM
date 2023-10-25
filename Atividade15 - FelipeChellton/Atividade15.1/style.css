@@ -1,0 +1,22 @@
+.body{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+.container {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  
+   
+}   
+
+.container img{
+    width: 500px;
+    height: 500px;
+    cursor: pointer;
+
+}
+
