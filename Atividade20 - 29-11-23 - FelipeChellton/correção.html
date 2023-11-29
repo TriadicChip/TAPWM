@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Correção</title>
+</head>
+
+<body>
+    <script>
+        //1)
+        var Objlivro1 = {
+            Titulo: "Shadow Garden",
+            Autor: "Liz parker"
+        }
+        alert(Objlivro1.Titulo + " " + Objlivro1.Autor)
+        alert('${Objlivro1.Titulo) $(Objlivro1.Autor}')
+        alert(JSON.stringify(Objlivro1))
+
+        var ObjLivro2 = {};
+        Objlivro2.Titulo = "Shadow Garden";
+        Objlivro2.Autor = "Liz Parker";
+
+        var Objlivro3 = new Object();
+        Objlivro3.Titulo = "Shadow Garden";
+        Objlivro3.Autor = "Liz parker";
+
+        function Livro(_Titulo, _Autor) {
+            this.Titulo = _Titulo;
+            this.Autor = _Autor;
+        }
+        var Objlivro4 = new Livro('Shadow Garden', 'Liz Parker');
+
+        class livro1 {
+            constructor(titulo, autor) {
+                this.Titulo = titulo;
+                this, autor = autor;
+            }
+        }
+
+        const objlivro5 = new livro1("Titulo do livro", "Autor do livro");
+
+        //questão 2) R: i = "123" 1230 - 1231 - 1232 - 1233- 1234 - 1235
+        var i = 1 + "2" + 3;
+        for (j = 0; j < 10; j++) {
+            alert(`${i}${j}`);
+            if (j === 5)
+                break;
+        }
+
+        //questão 3) R:d- 32,3,24,2,15,10,1
+        var novoArray = [3, 1, 24, 32, 10, 15, 2];
+        novoArray.sort();
+        novoArray.reverse();
+        console.log(novoArray);
+
+        //questão 4) R:resposta = 0
+        funcao1 = function (n) {
+            return (Math.pow(n, 3));
+        }
+        funcao2 = function (n1, n2) {
+            return funcao1(Math.min(n1, n2));
+        }
+        funcao3 = function (x, y) {
+            return funcao2(x, y);
+        }
+
+        var penultimo = prompt("Digite o penultimo digito do seu RA: ");
+        var ultimo = prompt("Digite o ultimo digito do seu RA: ");
+        alert(funcao3(penultimo, ultimo));
+
+        //questão 5) R:funtion ordene (n1,n2,n3)
+        //1
+        function Ordena(n1, n2, n3) {
+            var matriz = [n1, n2, n3];
+            matriz.sort(function (a, b) { b - a });
+            return matriz;
+        }
+        alert(Ordena(5, 2, 2));
+        //2
+        function Ordena2(n1, n2, n3) {
+            var matriz = [n1, n2, n3];
+            matriz.sort(function (a, b) { a - b });
+            matriz.reverse();
+            return matriz;
+        }
+        alert(Ordena2(5, 2, 2));
+        //3
+        function Ordena3(n1, n2, n3) {
+
+            let maior = Math.max(n1, n2, n3)
+            let maior = Math.min(n1, n2, n3)
+            let meio;
+            if (n1 !== maior && n1 !== menor) {
+                meio = n1;
+            } else if (n2 !== maior && n2 !== menor) {
+                meio = n2;
+            } else {
+                meio = n3;
+            }
+            return `$(maior) $(meio) $(menor)`;
+        }
+        alert(Ordena3(10, 5, 8));
+
+        //questão 6) R:alert('${objeto.descricao} ${objeto.codigo}');
+        var texto = '{"descricao", "Produto A", "codigo", 123}';
+        var objeto = JSON.parse(texto);
+        alert('${objeto.descricao} ${objeto.codigo}');
+
+
+        //questão 7) 
+        var j;
+        var i = 0;
+        var y = i / 0;
+        var z = 12 / i;
+        var w = null;
+
+        console.log(j); // undefined
+        console.log(y); // nah
+        console.log(z); //infinity
+        console.log(w); //null
+
+
+        //questao 8) R: e)nenhuma das anteriores
+        var numero1 = 33;
+        var numero2 = "33";
+        var numero3 = new String("33");
+        console.log(numero1 === numero2);
+        console.log(numero2 == numero3);
+        console.log(numero2 === numero3);
+
+        //questao 9) R:3340, 3341, 3342, 3343, 3344
+        var entrada = 1 + 2 + "3" + 4;
+        var saida = "";
+        for (var i = 0; i < 5; i++) {
+            saida += entrada + j + " ";
+        }
+        alert(saida);
+
+        //questao 10 c)somente 1,2,3,5,6
+
+        //<form name="formulario1">
+        //<input name="idNome" type="text" id="idNome" value="test">
+        //</form>
+
+        alert("1" + document.formulario1.alements[0].value);
+        alert("2" + document.forms.formulario1.elements.idNome.value);
+        alert("3" + document.forms.formulario1.elements[0].value);
+        alert("4" + document.getElementById("idNome"));
+        alert("5" + document.forms.formulario1.elements["idNome"].value);
+        alert("6" + document.getElementById("idNome").value);
+        alert("7" + document.getElementsByTagName("idNome"));
+        alert("8" + document.forms.getElementByName("idNome"));
+        alert("9" + document.getElementsByName("idNome".value));
+        alert("10" + document.getAttribute("name"));
+
+
+//questao 11) R: 1 , title, form, 1 , 4.
+/*
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulário de Login</title>
+    <script> //Não implementa
+    function validarFormulario(){
+        return true;
+    }
+    //Aqui fecha o script, tava bugndo ai tirei.
+    </head>
+
+   // <body>
+        <form onsubmit="return validarFormulario();">
+            <h1>Formulario De login</h1>
+            <input type="email" id="email" name="email" required>
+            <input type="password" id="senha" name="senha" required>
+            <input type="submit" value="Entrar">
+        </form>
+    </body>
+
+</html>
+*/
+
+//questao 12) R:document, history, location, navigation, frames, 
+//forms, image, link, location
+//button, input, textarea...
+
+</script>
