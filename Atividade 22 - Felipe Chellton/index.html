@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Atividade 22 - Ordenação de Números</title>
+</head>
+<body>
+
+    <h1>Ordenação de Números</h1>
+    <br><br>
+
+    <label for="num1">Número 1:</label>
+    <input type="number" id="num1">
+
+    <label for="num2">Número 2:</label>
+    <input type="number" id="num2">
+
+    <label for="num3">Número 3:</label>
+    <input type="number" id="num3">
+
+    <label for="num4">Número 4:</label>
+    <input type="number" id="num4">
+
+    <label for="num5">Número 5:</label>
+    <input type="number" id="num5">
+    <br><br><br>
+
+    <button onclick="ordenaNumeros()">Ordenar</button>
+    <br><br><br>
+
+    <h2>Resultado:</h2>
+    <p id="resultado"></p>
+
+    <script>
+        function ordenaNumeros() {
+            // Obter os números do input
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let num3 = parseFloat(document.getElementById("num3").value);
+            let num4 = parseFloat(document.getElementById("num4").value);
+            let num5 = parseFloat(document.getElementById("num5").value);
+
+            // Chamar a função de ordenação
+            let numerosOrdenados = ordena(num1, num2, num3, num4, num5);
+
+            // Exibir o resultado na página
+            document.getElementById("resultado").innerText = numerosOrdenados.join(', ');
+        }
+
+        function ordena(num1, num2, num3, num4, num5) {
+            // Criar uma matriz com os números
+            let numeros = [num1, num2, num3, num4, num5];
+
+            // Ordenar a matriz em ordem decrescente
+            numeros.sort(function(a, b) {
+                return b - a;
+            });
+
+            // Retornar a matriz ordenada
+            return numeros;
+        }
+    </script>
+
+</body>
+</html>
